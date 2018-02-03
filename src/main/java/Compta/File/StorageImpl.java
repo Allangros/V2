@@ -14,7 +14,7 @@ public class StorageImpl implements Storage{
     private final String path = "E:" + File.separator + "DossierCompte";
 
     private final String suffix = ".xml";
-    private String string;
+
 
     public void writeOnfile(String fileName) {
         try {
@@ -29,7 +29,7 @@ public class StorageImpl implements Storage{
     public List<String> readOnFile(String fileName) {
         List<String> compte = new ArrayList<>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader(fileName + string));
+            BufferedReader br = new BufferedReader(new FileReader(fileName + suffix));
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
             while ((line = br.readLine()) != null){
