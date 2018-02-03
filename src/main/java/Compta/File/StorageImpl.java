@@ -11,10 +11,22 @@ import static java.lang.String.valueOf;
  */
 public class StorageImpl implements Storage{
 
-    private final String path = "E:" + File.separator + "DossierCompte";
+    public WritePropertiesFile writePropertiesFile;
+
+    public ReadPropertiesFile readPropertiesFile;
 
     private final String suffix = ".xml";
 
+    private String path = "";
+
+    public StorageImpl(){
+    }
+
+    public StorageImpl(boolean b){
+        readPropertiesFile = new ReadPropertiesFile();
+        writePropertiesFile = new WritePropertiesFile();
+        path = readPropertiesFile.getPath();
+    }
 
     public void writeOnfile(String fileName) {
         try {
@@ -43,9 +55,20 @@ public class StorageImpl implements Storage{
         return compte;
     }
 
+    public Boolean createDirectory(String diskLetter, String directoryName) {
+        boolean status = false;
+        File theDir = new File(directoryName);
+        if(!theDir.exists()){
+            System.out.println("dir :" + directoryName +"created");
+            theDir.mkdir();
+            status = true;
+        }
+        return status;
+    }
+
     public Boolean createFile(String fileName) {
         boolean status = false;
-        String finalPath = path + File.separator + fileName + ".txt";
+        String finalPath = path + File.separator + fileName + suffix;
         File f = new File(finalPath);
 
         f.getParentFile().mkdirs();
@@ -107,5 +130,15 @@ public class StorageImpl implements Storage{
         } catch (UnsupportedEncodingException e) {
             System.out.println("erreur writeOnFile(String fileName, String transactionType, float montant)" + e);
         }
+    }
+
+    @Override
+    public boolean isFirstTime() {
+        boolean isFirstTime = true;
+        File file = new File("properties");
+        if (file.exists()){
+            isFirstTime = false;
+        }
+        return isFirstTime;
     }
 }

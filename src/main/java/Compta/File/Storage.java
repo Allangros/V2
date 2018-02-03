@@ -25,4 +25,6 @@ public interface Storage {
     public void initialiserSolde(String fileName);
 
     public void writeOnFile(String filename, String transactionType, float montant);
+
+    public boolean isFirstTime();
 }

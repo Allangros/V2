@@ -10,11 +10,15 @@ public interface Vue {
 
     public String compteExistantQuestion();
 
-    public void demanderNumeroDuCompte();
+//    public void demanderNumeroDuCompte();
 
     public void quitterProgramme();
 
-    public void demanderCreationDeCompte();
+//    public void demanderCreationDeCompte();
 
-    public Map<Integer, String> creationMappingCompte();
+//    public Map<Integer, String> creationMappingCompte();
+
+    public void demanderLecteur();
+
+    public String demanderNomRep();
 }

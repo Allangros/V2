@@ -19,3 +19,5 @@ puis par chronologie.
 Tjs verifier que la ligne est bien accessible. Sinon erreur fichier corrompu pour l'instant.
 
 Utiliser les fichiers xml pour les comptes, avec xml.utils
+
+
