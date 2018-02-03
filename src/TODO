@@ -13,9 +13,9 @@ Pour l'instant on reste basic le fichier aura la structure suivante :
 
 Plus tard faire evoluer pour avoir un bloc appelé OPERATION au lieu de TRANSACTION
 Permettant de gérer des VIREMENT (INTRA COMPTE, EXTRA COMPTE, etc)
-réfléchier si les opérations sont rentrées dans l'ordre chronologique sans distinction de type, ou au contraire par type
+réfléchir si les opérations sont rentrées dans l'ordre chronologique sans distinction de type, ou au contraire par type
 puis par chronologie.
 
 Tjs verifier que la ligne est bien accessible. Sinon erreur fichier corrompu pour l'instant.
 
-Finir les méthodes d'init des comptes dans storage.
+Utiliser les fichiers xml pour les comptes, avec xml.utils
